@@ -1,13 +1,27 @@
+#main-header {
+    text-align: center;
+    margin: auto;
+    color: white;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+    background-color: rgb(70, 70, 88);
+    background-image: url("https://image.shutterstock.com/image-vector/clean-sky-blue-gradient-background-260nw-1655872747.jpg");
+    background-size:cover;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
+.navbar {
+    justify-self: center;
+    background-color: rgb(128, 120, 120);
+    margin: 6px;
+    background-image: url("https://a-static.besthdwallpaper.com/simple-background-wallpaper-2800x1050-30492_88.jpg");
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    
+  }
+  .navlink {
+    padding-right: 30px;
+    color:#fff
+  }
