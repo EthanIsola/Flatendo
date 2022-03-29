@@ -1,10 +1,9 @@
 
 import { useEffect, useState } from "react";
-function Login({user, setUser}) {
-    let currentUsers;
+function Login() {
     const [userName, setUserName] = useState("");
     const [myPassword, setPassword] = useState("");
-    const [age, setAge] = useState("");
+    const [my_confirm, setConfirm] = useState("");
     const [option, setOption] = useState("login")
     const [display, setOptionDisplay] = useState(false)
     
@@ -17,8 +16,8 @@ function Login({user, setUser}) {
         setPassword(event.target.value);
     }
 
-    function handleAge(event) {
-        setAge(event.target.value);
+    function handleConfirm(event) {
+        setConfirm(event.target.value);
     }
 
     function handleOption(event) {
@@ -33,12 +32,11 @@ function Login({user, setUser}) {
 
       function handleSubmit(e) {
         e.preventDefault();
-        if (option === "sign up") {
+        if (option === "sign up" && myPassword === my_confirm) {
             console.log("sign up")
             const formData = {
             password: myPassword,
-            name: userName,
-            age: age
+            username: userName
         };
         alert("submitted")
 
@@ -50,6 +48,9 @@ function Login({user, setUser}) {
             body: JSON.stringify(formData),
       })
       setUser(userName)}
+      else if (option === "sign up" && myPassword !== my_confirm) {
+        alert("Passwords Don't Match")
+      }
       else{
         fetch("http://localhost:9292/viewers")
         .then(r=>r.json())
@@ -83,7 +84,7 @@ function Login({user, setUser}) {
                 </select>  
                 <input type="text" placeholder = "UserName" onChange={handleUserName} value={userName} />
                 <input type="text" placeholder = "Password" onChange={handlePassword} value={myPassword} />
-                {display ? <input type="text" placeholder = "Age" onChange={handleAge} value={age} /> : null}
+                {display ? <input type="text" placeholder = "Confirm Password" onChange={handleConfirm} value={my_confirm} /> : null}
                 <button type="submit">Submit</button>
             </form>
         </div>
